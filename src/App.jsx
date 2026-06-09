@@ -12,15 +12,21 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element = {<Home/>}></Route>
-        <Route path='/about' element = {<About/>}></Route>
-        <Route path='/services' element = {<Services/>}></Route>
-        <Route path='/login' element = {<Login/>}></Route>
-        <Route path='/register' element = {<Register/>}></Route>
-      </Routes>
-    <Sidebar/>
+      <div className='flex flex-col h-screen'>
+        <Navbar/>
+        <div className='flex flex-1'>
+          <Sidebar/>
+        <main className='bg-amber-300/50 flex flex-1 justify-center overflow-y-auto'>
+          <Routes>
+            <Route path='/' element = {<Home/>}></Route>
+            <Route path='/about' element = {<About/>}></Route>
+            <Route path='/services' element = {<Services/>}></Route>
+            <Route path='/login' element = {<Login/>}></Route>
+            <Route path='/register' element = {<Register/>}></Route>
+          </Routes>
+        </main>
+      </div>
+      </div>
 
     </>
   )
